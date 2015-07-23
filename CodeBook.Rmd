@@ -1,0 +1,31 @@
+---
+title: "Code Book"
+author: "Zulkhairi MD"
+date: "July 23, 2015"
+output: html_document
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+# CODE BOOK 
+## UCI HAR Dataset
+Code labels for Activity
+```{r}
+act_labels <- read.table("activity_labels.txt")
+colnames(act_labels) <- c("Code", "Activity")
+print(act_labels)
+```
+
+
+Code Features for Measuring Mean and Standard Deviation
+```{r}
+features <- read.table("features.txt")
+library(data.table)
+featuresDT = data.table(features)
+meanstd <- featuresDT[V2 %like% "mean()" | V2 %like% "std()"]
+##colnames(meanstd) <- c("Code", "Feature")
+setnames(meanstd, "V1", "Code")
+setnames(meanstd, "V2", "Feature")
+print(meanstd)
+```
+
