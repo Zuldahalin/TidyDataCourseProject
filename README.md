@@ -20,7 +20,7 @@ Once downloaded, the following datasets will be made available and access by run
   
 For the purpose of this project, run_analysis.R uses features related to mean and standard deviation only. Hence, a wild card search was conducted on the features list extracting feature labels that have the word "mean" and "std" in them. The R expression used is: featuresDT[V2 %like% "mean()" | V2 %like% "std()"], where V2 is the feature label variable in the featureDT data table. A total of 79 features were extracted out of the 561 features related to mean and std.  
   
-Please refer to the Code Book for the meaning of the codes that represent the activities and the codes that represent the 79 features for measuring the mean and standard deviation. Additionally, an R version of the Code Book is also included as an option in this repository which can be downloaded to your working directory and "knit" from the RStudio.  
+Please refer to the Code Book for the meaning of the codes that represent the activities and the codes that represent the 79 features for measuring the mean and standard deviation. Additionally, an R version of the Code Book is also included as an option in this repository which can be downloaded to your working directory and "knit" from the RStudio. Install the R Markdown package from CRAN: install.packages("rmarkdown").  
   
 The run_analysis.R script performs the following 5 steps:  
 1.  Merges the training and the test sets to create one data set.  
